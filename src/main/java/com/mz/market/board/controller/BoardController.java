@@ -42,4 +42,6 @@ public class BoardController {
     ){
         return ResponseEntity.ok().body(boardService.postAreaBoard(dto));
     }
+
+
 }

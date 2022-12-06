@@ -1,9 +1,11 @@
 package com.mz.market.user.entity;
 
+import com.mz.market.board.entity.BoardCategory;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.*;
-import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.List;
 
 @Entity
 @Getter
@@ -21,7 +23,4 @@ public class User {
 
     @NonNull
     private String name;
-
-
-
 }
