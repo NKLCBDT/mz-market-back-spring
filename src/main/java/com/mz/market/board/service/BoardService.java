@@ -3,6 +3,7 @@ package com.mz.market.board.service;
 import com.mz.market.board.controller.BoardController;
 import com.mz.market.board.dto.GetAllBoardDto;
 import com.mz.market.board.dto.GetBoardDto;
+import com.mz.market.board.repository.BoardRepository;
 import com.mz.market.common.dto.PostAreaBoardDto;
 import com.mz.market.common.dto.ResponseDto;
 import lombok.RequiredArgsConstructor;
@@ -11,7 +12,7 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class BoardService {
-    private final BoardController boardController;
+    private final BoardRepository boardRepository;
 
     public ResponseDto<GetAllBoardDto.Response> getAllBoard(){
         /**

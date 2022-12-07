@@ -1,7 +1,6 @@
 package com.mz.market.board.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -18,7 +17,5 @@ public class BoardCategory {
     @Column(name = "board_category_id")
     private Long id;
 
-    private CategoryName categoryName;
-
-
+    private String name;
 }
