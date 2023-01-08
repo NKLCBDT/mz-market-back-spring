@@ -17,10 +17,8 @@ public class User {
     @Id @GeneratedValue
     @Column(name = "user_id")
     private Long id;
-
     @Email
     private String email;
-
     @NonNull
     private String name;
 }
