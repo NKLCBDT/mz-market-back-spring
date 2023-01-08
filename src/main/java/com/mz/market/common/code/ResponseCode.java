@@ -8,8 +8,22 @@ import lombok.Setter;
 @AllArgsConstructor
 public enum ResponseCode {
 
-    GET_ALL_BOARD("SUCCESS", "BO000", "Get all board", "모든 게시판 글 조회"),
-    GET_USER_TOPICS("SUCCESS", "U0000", "Get user topics", "모든 유저 토픽 조회");
+    // Board
+
+    GET_ALL_BOARD("SUCCESS", "BO00", "Get all board", "모든 게시판 글 조회"),
+    // Topic
+
+    GET_USER_TOPICS("SUCCESS", "U000", "Get user topics", "모든 유저 토픽 조회"),
+
+    // USER
+
+    // ITEM
+
+    GET_ITEMS("SUCCESS", "I000", "Get all items", "모든 아이템 조회"),
+    GET_ITEM("SUCCESS", "I001", "Get single item", "단일 아이템 조회"),
+    POST_ITEM("SUCCESS", "I002", "Post item", "아이템 등록"),
+    UPDATE_ITEM("SUCCESS", "I003", "Update item", "아이템 수정"),
+    DELETE_ITEM("SUCCESS", "I004", "Delete item", "아이템 삭제");
     private String status; // API response
     private String code; // API response
     @Setter

@@ -1,5 +1,6 @@
 package com.mz.market.item.service;
 
+import com.mz.market.common.code.ResponseCode;
 import com.mz.market.common.dto.ResponseDto;
 import com.mz.market.item.dto.GetItemDto;
 import com.mz.market.item.dto.GetItemsDto;
@@ -19,22 +20,32 @@ public class ItemService {
     private final ItemRepository itemRepository;
 
     public ResponseDto<GetItemsDto.Response> getItems(){
-        return null;
+        return ResponseDto.<GetItemsDto.Response>builder()
+                .data(null)
+                .responseCode(ResponseCode.GET_ITEMS).build();
     }
 
     public ResponseDto<GetItemDto.Response> getItem(UUID itemId){
-        return null;
+        return ResponseDto.<GetItemDto.Response>builder()
+                .data(null)
+                .responseCode(ResponseCode.GET_ITEM).build();
     }
 
     public ResponseDto<PostItemDto.Response> postItem(PostItemDto.Request request){
-        return null;
+        return ResponseDto.<PostItemDto.Response>builder()
+                .data(null)
+                .responseCode(ResponseCode.POST_ITEM).build();
     }
 
     public ResponseDto<UpdateItemDto.Response> updateItem(UpdateItemDto.Request request){
-        return null;
+        return ResponseDto.<UpdateItemDto.Response>builder()
+                .data(null)
+                .responseCode(ResponseCode.UPDATE_ITEM).build();
     }
 
     public ResponseDto<Object> deleteItem(User user, UUID itemId){
-        return null;
+        return ResponseDto.builder()
+                .data(null)
+                .responseCode(ResponseCode.DELETE_ITEM).build();
     }
 }

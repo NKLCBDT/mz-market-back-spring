@@ -9,6 +9,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
 import java.util.UUID;
 
 @Getter
@@ -25,8 +26,11 @@ public class Item {
     private String name;
     @Builder.Default
     private Integer interest = 0;
-    private String contents;
+    private String explanation;
 
+    private String brand;
+    private Boolean isFree;
+    private Long price;
     @Builder.Default
     private Integer chatNum = 0;
     @Builder.Default
@@ -39,4 +43,10 @@ public class Item {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
+
+    @OneToMany(mappedBy = "item")
+    private List<ItemImage> itemImages;
+
+    @OneToMany(mappedBy = "item")
+    private List<ItemArea> itemAreas;
 }
