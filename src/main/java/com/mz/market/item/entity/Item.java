@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.Length;
 
 import java.util.List;
 import java.util.UUID;
@@ -26,20 +27,29 @@ public class Item {
     private String name;
     @Builder.Default
     private Integer interest = 0;
+
+    @Length(min = 20)
+    @NotNull
     private String explanation;
 
     private String brand;
+    @NotNull
     private Boolean isFree;
+
     private Long price;
+
     @Builder.Default
     private Integer chatNum = 0;
+
     @Builder.Default
     private Integer view = 0;
     @NotNull
     private Status status;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
     private Category category;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
