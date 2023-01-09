@@ -19,7 +19,7 @@ import java.util.UUID;
 public class ItemService {
     private final ItemRepository itemRepository;
 
-    public ResponseDto<GetItemsDto.Response> getItems(){
+    public ResponseDto<GetItemsDto.Response> getItems(String area){
         return ResponseDto.<GetItemsDto.Response>builder()
                 .data(null)
                 .responseCode(ResponseCode.GET_ITEMS).build();

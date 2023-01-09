@@ -24,8 +24,8 @@ public class ItemController {
     private final ItemService itemService;
 
     @GetMapping
-    public ResponseEntity<ResponseDto<GetItemsDto.Response>> getItems(){
-        return new ResponseEntity<>(itemService.getItems(), OK);
+    public ResponseEntity<ResponseDto<GetItemsDto.Response>> getItems(@RequestParam String area){
+        return new ResponseEntity<>(itemService.getItems(area), OK);
     }
 
     @GetMapping("/{item-id}")
