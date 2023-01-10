@@ -1,9 +1,11 @@
 package com.mz.market.user.entity;
 
+import com.mz.market.board.entity.BoardCategory;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.*;
-import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.List;
 
 @Entity
 @Getter
@@ -15,13 +17,8 @@ public class User {
     @Id @GeneratedValue
     @Column(name = "user_id")
     private Long id;
-
     @Email
     private String email;
-
     @NonNull
     private String name;
-
-
-
 }
