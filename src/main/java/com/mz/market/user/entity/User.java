@@ -20,5 +20,10 @@ public class User {
     @Email
     private String email;
     @NonNull
-    private String name;
+    private String username;
+
+    private String password;
+
+    @Enumerated(EnumType.STRING)
+    private Role role;
 }
