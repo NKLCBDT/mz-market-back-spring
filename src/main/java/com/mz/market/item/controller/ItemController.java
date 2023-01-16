@@ -12,7 +12,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.util.List;
 import java.util.UUID;
 
 import static org.springframework.http.HttpStatus.*;
@@ -37,9 +39,10 @@ public class ItemController {
 
     @PostMapping
     public ResponseEntity<ResponseDto<PostItemDto.Response>> postItem(
-            @RequestBody PostItemDto.Request request
+            @RequestPart(value = "images") List<MultipartFile> images,
+            @RequestPart PostItemDto.Request request
     ){
-        return new ResponseEntity<>(itemService.postItem(request), OK);
+        return new ResponseEntity<>(itemService.postItem(images, request), OK);
     }
 
     @PutMapping
