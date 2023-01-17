@@ -41,12 +41,9 @@ public class LoginFilter extends AbstractAuthenticationProcessingFilter {
                                             FilterChain chain, Authentication authResult) throws IOException, ServletException {
         // 로그인 성공했을 때
         User user = (User) authResult.getPrincipal();
-
-
     }
 
     @Override
     protected void unsuccessfulAuthentication(HttpServletRequest request, HttpServletResponse response, AuthenticationException failed) throws IOException, ServletException {
-
     }
 }

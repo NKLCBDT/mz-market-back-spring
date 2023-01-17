@@ -13,6 +13,7 @@ public class LoginProvider implements AuthenticationProvider {
         UsernamePasswordAuthenticationToken token = (UsernamePasswordAuthenticationToken)authentication;
         String email = (String)token.getPrincipal();
         String password = (String)token.getCredentials();
+
         return new UsernamePasswordAuthenticationToken(email, password);
     }
 

@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+    parameters {
+        string(name: 'BRANCH', defaultValue: '*/master', description: 'checkout branch')
+    }
+    environment {
+
+    }
+
+    stages {
+        stage('Checkout'){
+            steps {
+                echo "current branch: ${params.BRANCH}"
+//                 checkout([$class: ])
+            }
+        }
+    }
+}
